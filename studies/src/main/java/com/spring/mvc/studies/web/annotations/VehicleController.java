@@ -1,7 +1,7 @@
 package com.spring.mvc.studies.web.annotations;
 
+import com.spring.mvc.studies.web.annotations.entities.Vehicle;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 //@Controller
