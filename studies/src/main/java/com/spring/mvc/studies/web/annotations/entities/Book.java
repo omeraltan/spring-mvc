@@ -1,9 +1,9 @@
-package com.spring.mvc.studies.web.annotations;
+package com.spring.mvc.studies.web.annotations.entities;
 
 import jakarta.persistence.*;
 
 @Entity
-public class Vehicle {
+public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
