@@ -18,7 +18,7 @@ import java.util.Map;
 public class EmployeeController {
     private Map<Long, Employee> employeeMap = new HashMap<>();
 
-    @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
+    @RequestMapping(value = "/addEmployeess", method = RequestMethod.POST)
     public String submit(@ModelAttribute("employee") Employee employee, BindingResult result, ModelMap model){
         if (result.hasErrors()){
             return "error";

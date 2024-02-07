@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:form="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Thymeleaf Example</title>
+</head>
+<body>
+<h3>Welcome, Enter The Employee Details</h3>
+<form method="post" th:action="@{/addWorker}" th:object="${worker}">
+    <table>
+        <tr>
+           <td><label path="name">Name</label></td>
+           <td><input th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td><label path="id">Id</label></td>
+            <td><input th:field="*{id}"/></td>
+        </tr>
+        <tr>
+            <td><label path="contactNumber">Contact Number</label></td>
+            <td><input th:field="*{contactNumber}"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"/></td>
+        </tr>
+        <tr>
+          <li th:each="err : ${#fields.errors('id')}" th:text="${err}"} />
+          <li th:each="err : ${#fields.errors('name')}" th:text="${err}"} />
+          <ul>
+            <li th:errors="*{id}"/>
+            <li th:errors="*{name}"/>
+          </ul>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

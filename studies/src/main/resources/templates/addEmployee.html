@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:form="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<form method="get" modelAttribute="worker">
+
+</form>
+    <h2>Submitted Employee Information</h2>
+    <table>
+        <tr>
+          Current time is <span th:text="${serverTime}"/>
+        </tr>
+        <tr>
+            <td>Name :</td>
+            <td th:text="${name}"></td>
+        </tr>
+        <tr>
+            <td>ID :</td>
+            <td th:text="${id}"></td>
+        </tr>
+        <tr>
+            <td>Contact Number :</td>
+            <td th:text="${contactNumber}"></td>
+        </tr>
+        <br/>
+        <tr th:each="student: ${students}">
+            <td th:text="${student.id}"/>
+            <td th:text="${student.name}"/>
+<!--            <td th:if="${student.gender} == 'M'" th:text="Male"/>-->
+            <td th:switch="${student.gender}">
+              <span th:case="'M'" th:text="Male"/>
+              <span th:case="'F'" th:text="Female"/>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
