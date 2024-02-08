@@ -67,7 +67,7 @@ public class VehicleController {
 
     // @Controller
 
-    // @RestController
+    // @RestControllerTest
 
     // @ModelAttribute
 
